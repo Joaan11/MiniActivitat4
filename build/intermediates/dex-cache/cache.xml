@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="C:\Users\jonsa\AndroidStudioProjects\MiniActivitat4\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="27.0.3"
+        sha1="4fa67b68b27f84e9a3f1cb8f86046a7870e2e9e3">
+        <dex dex="C:\Users\jonsa\AndroidStudioProjects\MiniActivitat4\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_f2bd75ebefe52327bc2bcbb07a2700dacae14124\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\jonsa\AndroidStudioProjects\MiniActivitat4\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="27.0.3"
+        sha1="12920f9016b8b05acbc2af7cdc13cef6946fe7d3">
+        <dex dex="C:\Users\jonsa\AndroidStudioProjects\MiniActivitat4\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_4ad355631cb524f3ca1a9ff3f475c44fe6e00ceb\classes.dex" />
+    </item>
+
+</items>

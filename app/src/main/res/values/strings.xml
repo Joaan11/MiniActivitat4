@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello">Hello World, Main!</string>
+    <string name="app_name">ManejoServicios</string>
+    <string name="iniserv">Servicio Iniciado</string>
+    <string name="creaserv">Servicio Creado</string>
+    <string name="finaserv">Servicio Finalizado</string>
+    <string name="broadcast_StartSound">Intent Recibido - Inicio Sonido</string>
+    <string name="broadcast_StartSong">Intent Recibido - Inicio Canción</string>
+    <string name="broadcast_Stop">Intent Recibido - Detención Reproducción</string>
+
+    <string name="broadcast_HEADSET_ON">Intent Recibido - EVENTO DEL SISTEMA-ON</string>
+    <string name="broadcast_HEADSET_OFF">Intent Recibido - EVENTO DEL SISTEMA-OFF</string>
+
+    <string name="service_create">Servicio Creado</string>
+    <string name="service_init">Servicio Iniciado</string>
+    <string name="iniciar_URI">Iniciar Cancion via Uri</string>
+    <string name="service_destroy">Servicio Detenido</string>
+    <string name="ChooseSong">Seleccionar Audio</string>
+    <string name="URI">Reproducir Uri</string>
+</resources>
