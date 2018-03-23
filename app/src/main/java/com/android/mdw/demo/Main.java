@@ -2,7 +2,10 @@ package com.android.mdw.demo;
 
 import android.Manifest;
 import android.app.Activity;
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
@@ -13,6 +16,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class Main extends Activity implements OnClickListener {
     private Intent cancion;
@@ -21,17 +25,19 @@ public class Main extends Activity implements OnClickListener {
     private Intent Select;
     private final String SOUND = "SOUND";
     private final String STOP = "STOP";
-    private final String PLAY= "PLAY";
+    private final String PLAY = "PLAY";
     private static final Uri ALBUMART_URI = Uri.parse("content://media/external/audio/media/57");
     private int PICK_SONG = 1;
-    private static final int MYPERMISSIONS_EX_STORAGE = 0 ;
+    private static final int MYPERMISSIONS_EX_STORAGE = 0;
     private static final int MYPERMISSIONS_EX_MEDIA = 1;
     private static final int RESULT_LOAD_SONG = 0;
+    private AuricularesConectados auriculares;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
+        auriculares = new AuricularesConectados();
 
         Button btnCancion = (Button) findViewById(R.id.ReprCancion);
         Button btnSonido = (Button) findViewById(R.id.ReprSonido);
@@ -66,9 +72,9 @@ public class Main extends Activity implements OnClickListener {
                 sendBroadcast(new Intent(this, MyBroadcastReceiver.class).putExtra(STOP, "true"));
                 break;
             case R.id.ReprURI:
-                if (ContextCompat.checkSelfPermission(this,Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+                if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
                     accessResources(Manifest.permission.READ_EXTERNAL_STORAGE, MYPERMISSIONS_EX_STORAGE);
-                }else {
+                } else {
                     URI = new Intent(this, ElServicio.class);
                     //URL.putExtra("URI", ALBUMART_URI);
                     URI.setData(ALBUMART_URI);
@@ -78,9 +84,9 @@ public class Main extends Activity implements OnClickListener {
                 break;
             case R.id.SELECTAudio:
 
-                if (ContextCompat.checkSelfPermission(this,Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+                if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
                     accessResources(Manifest.permission.READ_EXTERNAL_STORAGE, MYPERMISSIONS_EX_MEDIA);
-                }else {
+                } else {
                     Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Audio.Media.EXTERNAL_CONTENT_URI);
                     startActivityForResult(intent, RESULT_LOAD_SONG);
                 }
@@ -101,9 +107,9 @@ public class Main extends Activity implements OnClickListener {
     }
 
 
-    public void onRequestPermissionsResult(int requestCode,String permissions[], int[] grantResults) {
+    public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
         switch (requestCode) {
-           case MYPERMISSIONS_EX_STORAGE: {
+            case MYPERMISSIONS_EX_STORAGE: {
                 // If request is cancelled, the result arrays are empty.
                 if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                     // permission was granted
@@ -133,9 +139,9 @@ public class Main extends Activity implements OnClickListener {
     }
 
     @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data){
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == RESULT_LOAD_SONG && resultCode == RESULT_OK && null != data){
+        if (requestCode == RESULT_LOAD_SONG && resultCode == RESULT_OK && null != data) {
             Uri uri = data.getData();
             Log.i("CANCION", uri.getPath());
             Intent intent = new Intent(this, ElServicio.class);
@@ -143,4 +149,48 @@ public class Main extends Activity implements OnClickListener {
             startService(intent);
         }
     }
+
+    @Override
+    public void onResume() {
+        IntentFilter filter = new IntentFilter(Intent.ACTION_HEADSET_PLUG);
+        registerReceiver(auriculares, filter);
+        super.onResume();
+
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        if (auriculares != null) {
+            unregisterReceiver(auriculares);
+        }
+    }
 }
+
+    class AuricularesConectados extends BroadcastReceiver{
+
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            Intent sonido = new Intent(context, ElServicio.class);
+
+            if(intent.getAction()!=null) {
+                if (intent.getAction().equals(Intent.ACTION_HEADSET_PLUG)) {
+                    int state = intent.getIntExtra("state", -1);
+                    switch (state) {
+                        case 1:
+                            Toast.makeText(context, R.string.broadcast_HEADSET_ON, Toast.LENGTH_LONG).show();
+                            sonido.putExtra("ID", R.raw.bob_marley_cybl);
+                            sonido.putExtra("SOUND", "Servicio Cancion Iniciado");
+                            context.startService(sonido);
+                            break;
+                        case 0:
+                            Toast.makeText(context, R.string.broadcast_HEADSET_OFF, Toast.LENGTH_LONG).show();
+                            context.stopService(sonido);
+                            break;
+                        default:
+                    }
+                }
+            }
+        }
+    }
+

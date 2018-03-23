@@ -12,6 +12,10 @@
         "source": "C:\\Users\\jonsa\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-26.1.0.aar\\dd30e94c1cfadc35569627e16c053140\\res\\drawable-mdpi-v4\\notification_bg_normal.9.png"
     },
     {
+        "merged": "C:\\Users\\jonsa\\AndroidStudioProjects\\MiniActivitat4\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_action_tombstone.xml.flat",
+        "source": "C:\\Users\\jonsa\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-26.1.0.aar\\dd30e94c1cfadc35569627e16c053140\\res\\layout\\notification_action_tombstone.xml"
+    },
+    {
         "merged": "C:\\Users\\jonsa\\AndroidStudioProjects\\MiniActivitat4\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_notification_bg_normal.9.png.flat",
         "source": "C:\\Users\\jonsa\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-26.1.0.aar\\dd30e94c1cfadc35569627e16c053140\\res\\drawable-xhdpi-v4\\notification_bg_normal.9.png"
     },
@@ -112,6 +116,10 @@
         "source": "C:\\Users\\jonsa\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-26.1.0.aar\\dd30e94c1cfadc35569627e16c053140\\res\\layout-v21\\notification_action.xml"
     },
     {
+        "merged": "C:\\Users\\jonsa\\AndroidStudioProjects\\MiniActivitat4\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_action.xml.flat",
+        "source": "C:\\Users\\jonsa\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-26.1.0.aar\\dd30e94c1cfadc35569627e16c053140\\res\\layout\\notification_action.xml"
+    },
+    {
         "merged": "C:\\Users\\jonsa\\AndroidStudioProjects\\MiniActivitat4\\app\\build\\intermediates\\res\\merged\\debug\\drawable_notification_icon_background.xml.flat",
         "source": "C:\\Users\\jonsa\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-26.1.0.aar\\dd30e94c1cfadc35569627e16c053140\\res\\drawable\\notification_icon_background.xml"
     },
@@ -122,6 +130,10 @@
     {
         "merged": "C:\\Users\\jonsa\\AndroidStudioProjects\\MiniActivitat4\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_notification_bg_normal.9.png.flat",
         "source": "C:\\Users\\jonsa\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-26.1.0.aar\\dd30e94c1cfadc35569627e16c053140\\res\\drawable-hdpi-v4\\notification_bg_normal.9.png"
+    },
+    {
+        "merged": "C:\\Users\\jonsa\\AndroidStudioProjects\\MiniActivitat4\\app\\build\\intermediates\\res\\merged\\debug\\layout-v16_notification_template_custom_big.xml.flat",
+        "source": "C:\\Users\\jonsa\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-26.1.0.aar\\dd30e94c1cfadc35569627e16c053140\\res\\layout-v16\\notification_template_custom_big.xml"
     },
     {
         "merged": "C:\\Users\\jonsa\\AndroidStudioProjects\\MiniActivitat4\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_icon.png.flat",
@@ -142,6 +154,10 @@
     {
         "merged": "C:\\Users\\jonsa\\AndroidStudioProjects\\MiniActivitat4\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_notification_bg_low_normal.9.png.flat",
         "source": "C:\\Users\\jonsa\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-26.1.0.aar\\dd30e94c1cfadc35569627e16c053140\\res\\drawable-mdpi-v4\\notification_bg_low_normal.9.png"
+    },
+    {
+        "merged": "C:\\Users\\jonsa\\AndroidStudioProjects\\MiniActivitat4\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_template_icon_group.xml.flat",
+        "source": "C:\\Users\\jonsa\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-26.1.0.aar\\dd30e94c1cfadc35569627e16c053140\\res\\layout\\notification_template_icon_group.xml"
     },
     {
         "merged": "C:\\Users\\jonsa\\AndroidStudioProjects\\MiniActivitat4\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21_notification_action_background.xml.flat",
